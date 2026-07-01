@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kenya Civic Info Bot — Frontend
 
-## Getting Started
+Next.js 14 chat interface for the Kenya Civic Info Bot. Ask questions about Kenya's Constitution, voting rights, and county government — every answer cites its source.
 
-First, run the development server:
+## Stack
+
+- **Next.js 14** App Router
+- **TypeScript**
+- **Tailwind CSS**
+
+## Local Setup
 
 ```bash
+npm install
+cp .env.local.example .env.local
+# set NEXT_PUBLIC_API_URL=http://localhost:8000
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|---|---|
+| `NEXT_PUBLIC_API_URL` | URL of the FastAPI backend |
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Mobile-first chat interface
+- Example questions on first load
+- Source pills on every bot response
+- Typing indicator while waiting
+- Full conversation history passed to backend
+- Graceful error state if backend is unreachable
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed on Vercel. Set `NEXT_PUBLIC_API_URL` to your Railway backend URL in the Vercel dashboard environment variables before deploying.
